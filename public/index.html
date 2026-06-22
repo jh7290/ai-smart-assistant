@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 智能助手</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span>AI Assistant</span>
+          <button id="newChatBtn" title="新建对话">+</button>
+        </div>
+        <div id="config" class="config">加载配置...</div>
+        <div id="conversations" class="conversations"></div>
+      </aside>
+
+      <section class="chat">
+        <header class="chat-header">
+          <div>
+            <input id="titleInput" class="title-input" placeholder="对话标题" />
+            <p>多轮对话、本地记忆、角色设定、多模型切换</p>
+          </div>
+          <button id="saveSettingsBtn" type="button">保存设定</button>
+        </header>
+
+        <section class="settings">
+          <label>
+            角色设定
+            <textarea id="personaInput" rows="2"></textarea>
+          </label>
+          <label>
+            长期记忆
+            <textarea id="memoryInput" rows="2"></textarea>
+          </label>
+        </section>
+
+        <section id="messages" class="messages"></section>
+
+        <form id="chatForm" class="composer">
+          <textarea id="messageInput" rows="3" placeholder="输入消息，例如：帮我优化 RAG 项目描述"></textarea>
+          <button type="submit">发送</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
