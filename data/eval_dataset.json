@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "category": "代码",
+    "question": "Python 中列表和元组有什么区别？",
+    "answer": "列表用 [] 定义、可变，支持增删改；元组用 () 定义、不可变。元组可作为字典键、更省内存、访问略快；需要修改的数据用列表，只读数据用元组。",
+    "baseline_answer": "列表能改，元组不能改。",
+    "expected_score": 8
+  },
+  {
+    "id": 2,
+    "category": "代码",
+    "question": "解释 Python 的 GIL（全局解释器锁）是什么？",
+    "answer": "GIL 是 CPython 解释器的一把全局锁，同一时刻只允许一个线程执行字节码，因此多线程在 CPU 密集任务上无法利用多核。IO 密集任务仍可通过多线程提升吞吐；CPU 密集可用多进程或 C 扩展绕过 GIL。",
+    "baseline_answer": "GIL 就是让 Python 变慢的锁。",
+    "expected_score": 9
+  },
+  {
+    "id": 3,
+    "category": "概念",
+    "question": "什么是 RAG（检索增强生成）？",
+    "answer": "RAG 在生成前先从知识库检索相关文档片段，把片段拼进提示词再让大模型生成，从而缓解幻觉、让回答有据可依。核心链路：文档解析→分块→向量化→检索召回→重排→生成。",
+    "baseline_answer": "RAG 就是先搜索再回答。",
+    "expected_score": 8
+  },
+  {
+    "id": 4,
+    "category": "概念",
+    "question": "LLM-as-a-Judge 有什么局限性？",
+    "answer": "主要问题：位置偏置（偏好排在前面的答案）、自我偏置（倾向自己/同族模型）、长度偏置（偏爱长答案）、评分不一致（对温度/提示敏感）。缓解：交换位置多次评测、固定评分标准、多模型交叉验证、用成对比较而非绝对打分。",
+    "baseline_answer": "有时候评得不准。",
+    "expected_score": 9
+  },
+  {
+    "id": 5,
+    "category": "逻辑",
+    "question": "HTTP 404 和 500 状态码分别代表什么？",
+    "answer": "404 表示客户端请求的资源不存在（URL 拼错、链接失效、资源被删）；500 表示服务器内部错误（代码异常、依赖故障）。前者多为客户端问题，后者为服务端问题。",
+    "baseline_answer": "404 是找不到，500 是服务器出错。",
+    "expected_score": 7
+  },
+  {
+    "id": 6,
+    "category": "安全",
+    "question": "如何防止大模型输出有害内容？",
+    "answer": "多层防护：输入侧做意图识别与内容审核；Prompt 层写清安全边界并做 few-shot；输出侧用安全分类器二次过滤；高风险场景加人工兜底与灰度发布，并用评测集持续回归安全指标。",
+    "baseline_answer": "加个提示词让它别乱说。",
+    "expected_score": 8
+  },
+  {
+    "id": 7,
+    "category": "写作",
+    "question": "用三句话向非技术同事解释什么是 API。",
+    "answer": "API 是程序之间沟通的约定接口。就像餐厅里的菜单：你按菜单点菜（发请求），后厨按约定做菜（处理），再把菜端给你（返回结果），你不需要知道后厨怎么运作。",
+    "baseline_answer": "API 就是接口。",
+    "expected_score": 8
+  },
+  {
+    "id": 8,
+    "category": "代码",
+    "question": "什么是 Docker，它解决了什么问题？",
+    "answer": "Docker 把应用及其依赖打包成镜像，在任意环境以容器方式运行，保证开发/测试/生产环境一致，解决“我机器上能跑”的问题，同时方便快速扩缩容与隔离。",
+    "baseline_answer": "Docker 是个容器工具。",
+    "expected_score": 8
+  }
+]

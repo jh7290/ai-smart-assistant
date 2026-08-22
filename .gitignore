@@ -4,3 +4,6 @@ __pycache__/
 .env
 data/*
 !data/eval_prompts.json
+!data/eval_dataset.json
+!data/multimodel_report.md
+!data/multimodel_result.json
